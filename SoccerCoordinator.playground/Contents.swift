@@ -68,19 +68,6 @@ for player in players {
     }
 }
 
-// Avereage player heights function
-func averageHeights(group: [String]) -> Int {
-    var counter = 0
-    for player in group {
-        counter = counter + (players[player]?.height)!
-    }
-    return counter/group.count
-}
-
-// Avereage player heights
-let averageInexperiencedHeights = averageHeights(group: inexperiencedPlayers)
-let averageExperiencedHeights = averageHeights(group: experiencedPlayers)
-
 // count the groups
 experiencedPlayers.count
 inexperiencedPlayers.count
@@ -89,9 +76,6 @@ inexperiencedPlayers.count
 var teamSharks: [String] = []
 var teamDragons: [String] = []
 var teamRaptors: [String] = []
-
-// Create height variable
-var heightSharks = 0
 
 // function to add players
 func addPlayers(group: [String]) {
@@ -108,31 +92,10 @@ func addPlayers(group: [String]) {
     }
 }
 
-/*
-func addPlayersIncludingHeight(group: [String]) {
-    var counter = 0
-    for player in group {
-        if (players[player]?.height)! > counter {
-            counter = players[player]?.height)!
-            addPlayers(group: group)
-        }
-    }
-}
- */
-
-
 // add players to the teams
 addPlayers(group: experiencedPlayers)
 addPlayers(group: inexperiencedPlayers)
 
-// Average height of the teams
-let averageSharksHeight = averageHeights(group: teamSharks)
-let averageDragonsHeight = averageHeights(group: teamDragons)
-let averageRaptorsHeight = averageHeights(group: teamRaptors)
-
-
-//print average team height
-    print("Team Sharks average height is \(averageSharksHeight), team Dragons is \(averageDragonsHeight) and team Raptors is \(averageRaptorsHeight).")
 
 // Letter for each kid
 var letters: [String: String] = [:]
